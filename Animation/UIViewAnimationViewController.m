@@ -9,29 +9,57 @@
 #import "UIViewAnimationViewController.h"
 
 @interface UIViewAnimationViewController ()
-
+@property (strong, nonatomic) UITextField *userName;
+@property (strong, nonatomic) UITextField *passWord;
 @end
 
 @implementation UIViewAnimationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.view addSubview:self.userName];
+    [self.view addSubview:self.passWord];
+    
+    CGPoint accountCenter = self.userName.center;
+    accountCenter.x += 200;
+    
+    CGPoint pswCenter = self.passWord.center;
+    pswCenter.x += 200;
+    
+    [UIView animateWithDuration:0.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.userName.center = accountCenter;
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.passWord.center = pswCenter;
+        } completion:^(BOOL finished) {
+            
+        }];
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Setter And Getter
+- (UITextField *)userName {
+    if (!_userName) {
+        _userName = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 100, 30)];
+        _userName.backgroundColor = [UIColor redColor];
+        
+        CGPoint accountCenter = self.userName.center;
+        accountCenter.x -= 200;
+        self.userName.center = accountCenter;
+    }
+    return _userName;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITextField *)passWord {
+    if (!_passWord) {
+        _passWord = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 30)];
+        _passWord.backgroundColor = [UIColor redColor];
+        
+        CGPoint pswCenter = self.passWord.center;
+        pswCenter.x -= 200;
+        self.passWord.center = pswCenter;
+    }
+    return _passWord;
 }
-*/
 
 @end
