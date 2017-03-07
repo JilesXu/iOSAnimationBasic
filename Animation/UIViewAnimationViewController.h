@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UIViewAnimationViewController.h
 //  Animation
 //
 //  Created by 徐沈俊杰 on 2017/3/7.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface UIViewAnimationViewController : UIViewController
 
 @end
-

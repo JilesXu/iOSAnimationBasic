@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		075771431E6EF8D4004A9605 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 075771421E6EF8D4004A9605 /* main.m */; };
 		075771461E6EF8D4004A9605 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 075771451E6EF8D4004A9605 /* AppDelegate.m */; };
-		075771491E6EF8D4004A9605 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075771481E6EF8D4004A9605 /* ViewController.m */; };
 		0757714C1E6EF8D4004A9605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0757714A1E6EF8D4004A9605 /* Main.storyboard */; };
 		0757714E1E6EF8D4004A9605 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0757714D1E6EF8D4004A9605 /* Assets.xcassets */; };
 		075771511E6EF8D4004A9605 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0757714F1E6EF8D4004A9605 /* LaunchScreen.storyboard */; };
 		0757715C1E6EF8D4004A9605 /* AnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0757715B1E6EF8D4004A9605 /* AnimationTests.m */; };
 		075771671E6EF8D4004A9605 /* AnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075771661E6EF8D4004A9605 /* AnimationUITests.m */; };
+		075771761E6EF9C6004A9605 /* UIViewAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 075771751E6EF9C6004A9605 /* UIViewAnimationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,6 @@
 		075771421E6EF8D4004A9605 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		075771441E6EF8D4004A9605 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		075771451E6EF8D4004A9605 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		075771471E6EF8D4004A9605 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		075771481E6EF8D4004A9605 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0757714B1E6EF8D4004A9605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0757714D1E6EF8D4004A9605 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		075771501E6EF8D4004A9605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		075771621E6EF8D4004A9605 /* AnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		075771661E6EF8D4004A9605 /* AnimationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationUITests.m; sourceTree = "<group>"; };
 		075771681E6EF8D4004A9605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		075771741E6EF9C6004A9605 /* UIViewAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewAnimationViewController.h; sourceTree = "<group>"; };
+		075771751E6EF9C6004A9605 /* UIViewAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewAnimationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +103,9 @@
 			children = (
 				075771441E6EF8D4004A9605 /* AppDelegate.h */,
 				075771451E6EF8D4004A9605 /* AppDelegate.m */,
-				075771471E6EF8D4004A9605 /* ViewController.h */,
-				075771481E6EF8D4004A9605 /* ViewController.m */,
 				0757714A1E6EF8D4004A9605 /* Main.storyboard */,
+				075771741E6EF9C6004A9605 /* UIViewAnimationViewController.h */,
+				075771751E6EF9C6004A9605 /* UIViewAnimationViewController.m */,
 				0757714D1E6EF8D4004A9605 /* Assets.xcassets */,
 				0757714F1E6EF8D4004A9605 /* LaunchScreen.storyboard */,
 				075771521E6EF8D4004A9605 /* Info.plist */,
@@ -276,8 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				075771491E6EF8D4004A9605 /* ViewController.m in Sources */,
 				075771461E6EF8D4004A9605 /* AppDelegate.m in Sources */,
+				075771761E6EF9C6004A9605 /* UIViewAnimationViewController.m in Sources */,
 				075771431E6EF8D4004A9605 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
