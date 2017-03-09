@@ -11,6 +11,7 @@
 @interface UIViewAnimationViewController ()
 @property (strong, nonatomic) UITextField *userName;
 @property (strong, nonatomic) UITextField *passWord;
+@property (strong, nonatomic) UITextField *verify;
 @end
 
 @implementation UIViewAnimationViewController
@@ -19,6 +20,8 @@
     [super viewDidLoad];
     [self.view addSubview:self.userName];
     [self.view addSubview:self.passWord];
+    [self.view addSubview:self.verify];
+    
     
     CGPoint accountCenter = self.userName.center;
     accountCenter.x += 200;
@@ -26,14 +29,23 @@
     CGPoint pswCenter = self.passWord.center;
     pswCenter.x += 200;
     
-    [UIView animateWithDuration:0.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        self.userName.center = accountCenter;
+    CGPoint verifyCenter = self.passWord.center;
+    verifyCenter.x += 200;
+    
+//    [UIView animateWithDuration:0.5 delay:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//        self.userName.center = accountCenter;
+//    } completion:^(BOOL finished) {
+//        [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat  animations:^{
+//            self.passWord.center = pswCenter;
+//        } completion:^(BOOL finished) {
+//            
+//        }];
+//    }];
+    
+    [UIView animateWithDuration:0.5 delay:1 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        self.verify.center = verifyCenter;
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.5 delay:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.passWord.center = pswCenter;
-        } completion:^(BOOL finished) {
-            
-        }];
+        
     }];
 }
 
@@ -43,9 +55,9 @@
         _userName = [[UITextField alloc] initWithFrame:CGRectMake(100, 100, 100, 30)];
         _userName.backgroundColor = [UIColor redColor];
         
-        CGPoint accountCenter = self.userName.center;
+        CGPoint accountCenter = _userName.center;
         accountCenter.x -= 200;
-        self.userName.center = accountCenter;
+        _userName.center = accountCenter;
     }
     return _userName;
 }
@@ -55,11 +67,23 @@
         _passWord = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 30)];
         _passWord.backgroundColor = [UIColor redColor];
         
-        CGPoint pswCenter = self.passWord.center;
+        CGPoint pswCenter = _passWord.center;
         pswCenter.x -= 200;
-        self.passWord.center = pswCenter;
+        _passWord.center = pswCenter;
     }
     return _passWord;
+}
+
+- (UITextField *)verify {
+    if (!_verify) {
+        _verify = [[UITextField alloc] initWithFrame:CGRectMake(100, 200, 100, 30)];
+        _verify.backgroundColor = [UIColor redColor];
+        
+        CGPoint verifyCenter = _verify.center;
+        verifyCenter.x -= 200;
+        _verify.center = verifyCenter;
+    }
+    return _verify;
 }
 
 @end
